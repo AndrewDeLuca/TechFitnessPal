@@ -18,6 +18,7 @@ CREATE TABLE profile (
 	desired_weight int NOT NULL,
 	age int,
 	height int,
+	
 	CONSTRAINT PK_profile PRIMARY KEY (profile_id),
 	CONSTRAINT FK_profile_user_id FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
