@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @Component
-public class JdbcFoodsDao implements FoodsDao{
+public class JdbcFoodsDao implements FoodsDao {
 
     private final JdbcTemplate jdbcTemplate;
     public JdbcFoodsDao(JdbcTemplate jdbcTemplate) {
@@ -18,19 +18,22 @@ public class JdbcFoodsDao implements FoodsDao{
 
     }
     @Override
-    public List<Foods> addFood(int userId) {
-        List<Foods> listOfFoods = new ArrayList<>();
+    public Foods addFood(Foods foods) {
 
-        String sql = "INSERT INTO foods WHERE user_id = ?;";
 
-        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, userId);
-        while (rowSet.next()) {
+        String sql = "INSERT INTO foods (food_id, profile_id, name, serving_size, number_of_servings, meal, calories)" +
+                "VALUES (?, ?, ?, ?, ?, ?, ?);";
 
-            Foods list = mapRowToFoodsList(rowSet);
-            listOfFoods.add(list);
-        }
-        return listOfFoods;
+        Foods newFood = jdbcTemplate.queryForObject(sql, Foods.class,
+                foods.getFoodId(),
+                foods.getProfileId(),
+                foods.getName(),
+                foods.getServingSize(),
+                foods.getNumberOfServings(),
+                foods.getMeal(),
+                foods.getCalories());
 
+        return foods;
     }
 
     @Override

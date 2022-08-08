@@ -1,13 +1,15 @@
 package com.techelevator.dao;
 
-import java.util.List;
+import com.techelevator.model.Foods;
 
 public interface FoodsDao {
 
-public List addFood(int userId);
+
+    public Foods addFood(Foods foods);
 
 
-public int findFood(int foodId);
+
+    public int findFood(int foodId);
 
 
 
