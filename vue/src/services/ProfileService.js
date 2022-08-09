@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default {
     
-    createProfile(user) {
-        return axios.post('/profile', user);
+    createProfile(profile) {
+        return axios.post('/profile', profile);
     }
 }

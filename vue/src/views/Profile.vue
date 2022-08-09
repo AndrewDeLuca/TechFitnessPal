@@ -61,23 +61,38 @@
 
   </div>
 </template>
-
 <script>
-//import ProfileService from '@/services/ProfileService.js';
-//export default {
-//created() {
-//ProfileService.create().then (response => {
+import profileService from '../services/ProfileService.js'
 
+export default {
+    name: 'profile',
+    components: {},
+    data() {
+        return {
+            profile: {
+                profile_id: '',
+                user_id: '',
+                goal_calories: '',
+                current_weight: '',
+                desired_weight: '',
+                age: '',
+                height: ''
+            }
+        }
+    },
+    methods: {
+        create() {
+            profileService.createProfile(this.user).then(response => {
+              if (response.status === 201) {
+                this.$router.push({ name: "home" });
+              }
+            });
+            }
+          }
+        
+    
 
-
-//}
-
-//}
-
-
-
-
-
+}
 </script>
 
 <style>

@@ -1,7 +1,7 @@
 <template>
   <div id="register" class="text-center">
-      <form class="form-register">
-          <h1 class="h3 mb-3 font-weight-normal" @submit.prevent="create">Create Profile</h1>
+      <form class="form-register" @submit.prevent="create">
+          <h1 class="h3 mb-3 font-weight-normal" >Create Profile</h1>
             <div class="alert alert-danger" role="alert"></div>
       
       <label for="age" class="sr-only">Age</label>
@@ -27,14 +27,14 @@
 <script>
 import profileService from '../services/ProfileService.js'
 
+
 export default {
     name: 'profile',
     components: {},
     data() {
         return {
             profile: {
-                profile_id: '',
-                user_id: '',
+                user_id: this.$store.state.user.id,
                 goal_calories: '',
                 current_weight: '',
                 desired_weight: '',

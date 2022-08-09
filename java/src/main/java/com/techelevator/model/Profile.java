@@ -4,7 +4,7 @@ import javax.validation.constraints.NotEmpty;
 
 public class Profile {
 
-    @NotEmpty
+
     private int userId;
     @NotEmpty
     private int goalCalories;
@@ -16,7 +16,7 @@ public class Profile {
     private int age;
     @NotEmpty
     private int height;
-    @NotEmpty
+
     private int profileId;
 
     public Profile() {
