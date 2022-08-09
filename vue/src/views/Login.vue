@@ -1,7 +1,10 @@
 <template>
+
   <div id="login" class="text-center">
+    
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      
       <div
         class="alert alert-danger"
         role="alert"
@@ -31,9 +34,11 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      <router-link :to="{ name: 'register'}" class='link' >Need an account?</router-link>
       <button type="submit">Sign in</button>
+     
     </form>
+    <img src="https://images.unsplash.com/photo-1578880981498-3d60436ba825?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTJ8fGZpdG5lc3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
   </div>
 </template>
 
@@ -74,3 +79,43 @@ export default {
   }
 };
 </script>
+
+<style >
+/* Main styling */
+ 
+h1 {
+  color:cornflowerblue;
+  text-align: center;
+}
+
+div {
+  text-align: center;
+  
+}
+
+html {
+  background-color: lightgoldenrodyellow;
+}
+
+label {
+  padding-inline: 10px;
+}
+
+.link {
+   margin-left: 25px;
+  margin-right: 15px;
+}
+
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+img {
+padding: 25px;
+width: 300px;
+height: 300px;
+
+}
+
+</style>
