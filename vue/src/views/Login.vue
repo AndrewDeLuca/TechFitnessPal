@@ -1,9 +1,7 @@
 <template>
 
   <div id="login" class="text-center">
-    <div>
-      <img src ="https://ibb.co/rKjCYry">
-      </div>
+    
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       
@@ -40,6 +38,7 @@
       <button type="submit">Sign in</button>
      
     </form>
+    <img src="https://images.unsplash.com/photo-1578880981498-3d60436ba825?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTJ8fGZpdG5lc3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
   </div>
 </template>
 
@@ -110,6 +109,13 @@ label {
 button {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+img {
+padding: 25px;
+width: 300px;
+height: 300px;
+
 }
 
 </style>
