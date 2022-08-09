@@ -19,6 +19,8 @@ public class Profile {
     @NotEmpty
     private int profileId;
 
+    public Profile() {
+    }
 
     public int getUserId() {
         return userId;

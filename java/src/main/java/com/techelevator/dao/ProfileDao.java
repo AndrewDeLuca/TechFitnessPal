@@ -4,15 +4,13 @@ import com.techelevator.model.Profile;
 
 public interface ProfileDao {
 
-    public Profile create(Profile profile);
+    Profile create(Profile profile);
 
-public int calculateTotalDailyCalories (int userId);
+    int calculateTotalDailyCalories (int userId);
 
+    int calculateUserBmi(int userId);
 
-public int calculateUserBmi(int userId);
-
-
-public int addGoldStars(int userId);
+    int addGoldStars(int userId);
 
 
 }
