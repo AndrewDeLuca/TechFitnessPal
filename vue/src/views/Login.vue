@@ -1,7 +1,12 @@
 <template>
+
   <div id="login" class="text-center">
+    <div>
+      <img src ="https://ibb.co/rKjCYry">
+      </div>
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      
       <div
         class="alert alert-danger"
         role="alert"
@@ -31,8 +36,9 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      <router-link :to="{ name: 'register'}" class='link' >Need an account?</router-link>
       <button type="submit">Sign in</button>
+     
     </form>
   </div>
 </template>
@@ -74,3 +80,36 @@ export default {
   }
 };
 </script>
+
+<style >
+/* Main styling */
+ 
+h1 {
+  color:cornflowerblue;
+  text-align: center;
+}
+
+div {
+  text-align: center;
+  
+}
+
+html {
+  background-color: lightgoldenrodyellow;
+}
+
+label {
+  padding-inline: 10px;
+}
+
+.link {
+   margin-left: 25px;
+  margin-right: 15px;
+}
+
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+</style>
