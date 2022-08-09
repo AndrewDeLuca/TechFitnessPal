@@ -21,7 +21,7 @@ public class JdbcFoodsDao implements FoodsDao {
     public Foods addFood(Foods foods) {
 
 
-        String sql = "INSERT INTO foods (food_id, profile_id, name, serving_size, number_of_servings, meal, calories)" +
+        String sql = "INSERT INTO foods " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?);";
 
         Foods newFood = jdbcTemplate.queryForObject(sql, Foods.class,

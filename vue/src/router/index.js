@@ -5,8 +5,8 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
-//import { component } from 'vue/types/umd'
 import Profile from '../views/Profile.vue'
+
 Vue.use(Router)
 
 /**
@@ -55,10 +55,12 @@ const router = new Router({
       }
     },
     {
-    path: "/profile",
-    name: "profile",
-    component: Profile
-    
+      path: "/profile",
+      name: "profile",
+      component: Profile,
+      meta: {
+        requiresAuth: false
+      }
     }
     
    
