@@ -55,7 +55,7 @@
 
 
 
-<input type="submit" value="Submit Information">
+<input class="submitButton"  type="submit" value="Submit Information">
 
     </form>
 
@@ -63,23 +63,30 @@
 </template>
 
 <script>
-import ProfileService from '@/services/ProfileService.js';
-export default {
-created() {
-ProfileService.create().then (response => {
+//import ProfileService from '@/services/ProfileService.js';
+//export default {
+//created() {
+//ProfileService.create().then (response => {
 
 
 
-}
+//}
 
-}
-
-
+//}
 
 
-}
+
+
+
 </script>
 
 <style>
+
+form {
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 
 </style>
