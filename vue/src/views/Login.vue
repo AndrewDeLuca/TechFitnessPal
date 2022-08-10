@@ -3,7 +3,8 @@
   <div id="login" class="text-center">
     
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      <img src="https://prod.wp.cdn.aws.wfu.edu/sites/22/2020/04/iStock-854725402.blog_.jpg" width="500" />
+      <h1 class="h3 mb-3 font-weight-normal">Welcome to Waist Management</h1>
       
       <div
         class="alert alert-danger"
@@ -15,7 +16,7 @@
         role="alert"
         v-if="this.$route.query.registration"
       >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
+      <label for="username" class="sr-only"></label>
       <input
         type="text"
         id="username"
@@ -25,7 +26,7 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      <label for="password" class="sr-only"></label>
       <input
         type="password"
         id="password"
@@ -34,12 +35,11 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register'}" class='link' >Need an account?</router-link>
-      <button type="submit">Sign in</button>
+      
+      <button type="submit">Sign In</button>
      
     </form>
-    <img src="https://images.unsplash.com/photo-1578880981498-3d60436ba825?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTJ8fGZpdG5lc3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
-  </div>
+      </div>
 </template>
 
 <script>
@@ -86,6 +86,9 @@ export default {
 h1 {
   color:cornflowerblue;
   text-align: center;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
 }
 
 div {
@@ -113,7 +116,7 @@ button {
 
 img {
 padding: 25px;
-width: 300px;
+width: 540px;
 height: 300px;
 
 }

@@ -1,23 +1,23 @@
 <template>
   <div id="register" class="text-center">
       <form class="form-register" @submit.prevent="create">
-          <h1 class="h3 mb-3 font-weight-normal" >Create Profile</h1>
+          <h1 class="h3 mb-3 font-weight-normal" >Create Your Waist Management Profile!</h1>
             <div class="alert alert-danger" role="alert"></div>
       
-      <label for="age" class="sr-only">Age</label>
-      <input type="number" id="age" class="form-control" placeholder="Age" v-model="profile.age" required autofocus>
+      <label for="age" class="sr-only"></label>
+      <input type="number" min="0" id="age" class="form-control" placeholder="Age" v-model="profile.age" required autofocus>
       
-      <label for="height" class="sr-only">Height</label>
-      <input type="number" id="height" class="form-control" placeholder="Height" v-model="profile.height" required>
+      <label for="height" class="sr-only"></label>
+      <input type="text" min="0" id="height" class="form-control" placeholder="Height" v-model="profile.height" required>
       
-      <label for="current_weight" class="sr-only">Current Weight</label>
-      <input type="number" id="current_weight" class="form-control" placeholder="Current Weight" v-model="profile.currentWeight" required>
+      <label for="current_weight" class="sr-only"></label>
+      <input type="number" min="0" id="current_weight" class="form-control" placeholder="Current Weight" v-model="profile.currentWeight" required>
 
-      <label for="desired_weight" class="sr-only">Desired Weight</label>
-      <input type="number" id="desired_weight" class="form-control" placeholder="Desired Weight" v-model="profile.desiredWeight" required>
+      <label for="desired_weight" class="sr-only"></label>
+      <input type="number" min="0" id="desired_weight" class="form-control" placeholder="Desired Weight" v-model="profile.desiredWeight" required>
  
-      <label for="goal_calories" class="sr-only">Goal Calories</label>
-      <input type="number" id="goal_calories" class="form-control" placeholder="Goal Calories" v-model="profile.goalCalories" required>
+      <label for="goal_calories" class="sr-only"></label>
+      <input type="number" min="0" id="goal_calories" class="form-control" placeholder="Goal Calories" v-model="profile.goalCalories" required>
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">Create Profile</button>
       </form>
@@ -59,5 +59,35 @@ export default {
 </script>
 
 <style>
+
+input{
+
+  display: flex;
+  margin: auto;
+  height: 40px;
+  width: 525px;
+  font-size: larger;
+  text-align: center;
+}
+
+
+form{
+
+padding: 20px;
+margin: auto;
+
+}
+
+
+button {
+
+  margin-top: 20px;
+  height: 50px;
+  width: 535px;
+  font-size: xx-large;
+  font-weight: bolder;
+
+}
+
 
 </style>
