@@ -18,7 +18,6 @@ public class JdbcProfileDao implements ProfileDao {
 
     @Override
     public Profile create(Profile profile) {
-        userDao.getUserById(profile.getUserId());
         String sql = "" +
                 "INSERT INTO profile (user_id, goal_calories, current_weight, desired_weight, age, height) " +
                 "VALUES (?, ?, ?, ?, ?, ?) " +
