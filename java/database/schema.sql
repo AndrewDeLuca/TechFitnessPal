@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users, foods, profile, meal;
+DROP TABLE IF EXISTS users, foods, profile, meal, mealsFoods;
 
 CREATE TABLE users (
 	user_id SERIAL,
@@ -48,8 +48,8 @@ CREATE TABLE meals (
    calories int NOT NULL,
 
    CONSTRAINT PK_meals PRIMARY KEY (meal_id),
-   CONSTRAINT FK_food_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id),
-   CONSTRAINT FK_food_profile_id FOREIGN KEY (food_id) REFERENCES foods (food_id)
+   CONSTRAINT FK_meals_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id),
+   CONSTRAINT FK_meals_food_id FOREIGN KEY (food_id) REFERENCES foods (food_id)
 );
 
 CREATE TABLE mealsFoods (
@@ -59,8 +59,8 @@ CREATE TABLE mealsFoods (
    meal_foods_name varchar(50),
    calories int NOT NULL,
 
-   CONSTRAINT PK_meal_foods_id PRIMARY KEY (meal_foods_id),
-   CONSTRAINT FK_food_meal_id FOREIGN KEY (meal_id) REFERENCES meals (meal_id),
+   CONSTRAINT PK_mealsFoods PRIMARY KEY (meal_foods_id),
+   CONSTRAINT FK_mealsFoods_meal_id FOREIGN KEY (meal_id) REFERENCES meals (meal_id),
    CONSTRAINT FK_mealsFood_food_id FOREIGN KEY (food_id) REFERENCES foods (food_id)
 );
 
