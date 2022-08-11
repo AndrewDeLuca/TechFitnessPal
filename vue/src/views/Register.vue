@@ -42,8 +42,11 @@
 
 <script>
 import authService from '../services/AuthService';
-
+import APIService from '../services/APIService.js'
 export default {
+   created() {
+      APIService.foodSearch('apple')
+    },
   name: 'register',
   data() {
     return {

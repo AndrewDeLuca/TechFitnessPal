@@ -39,13 +39,29 @@ CREATE TABLE foods (
 	CONSTRAINT FK_food_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id)
 );
 
-CREATE TABLE meal (
-    meal_id SERIAL,
-    profile_id int,
-    quick_meal varchar(500),
+CREATE TABLE meals (
+   meal_id SERIAL,
+   profile_id int,
+   food_id int,
+   number_of_servings int NOT NULL,
+   meal_name varchar(50),
+   calories int NOT NULL,
 
-    CONSTRAINT PK_meal PRIMARY KEY (meal_id),
-    CONSTRAINT FK_meal_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id)
+   CONSTRAINT PK_meals PRIMARY KEY (meal_id),
+   CONSTRAINT FK_food_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id),
+   CONSTRAINT FK_food_profile_id FOREIGN KEY (food_id) REFERENCES foods (food_id)
+);
+
+CREATE TABLE mealsFoods (
+   meal_foods_id SERIAL,
+   meal_id int,
+   food_id int,
+   meal_foods_name varchar(50),
+   calories int NOT NULL,
+
+   CONSTRAINT PK_meal_foods_id PRIMARY KEY (meal_foods_id),
+   CONSTRAINT FK_food_meal_id FOREIGN KEY (meal_id) REFERENCES meals (meal_id),
+   CONSTRAINT FK_mealsFood_food_id FOREIGN KEY (food_id) REFERENCES foods (food_id)
 );
 
 COMMIT TRANSACTION;
