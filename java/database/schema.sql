@@ -18,6 +18,7 @@ CREATE TABLE profile (
 	current_weight int NOT NULL,
 	desired_weight int NOT NULL,
 	height int,
+	age int,
 	date_of_birth DATE,
 	img_url varchar(100),
 	display_name varchar(50),
