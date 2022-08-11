@@ -7,7 +7,7 @@
             <div class="alert alert-danger" role="alert"></div>
       
       <label for="img" class="sr-only"></label>
-      <input type="text" min="0" is="img" class="form-control" placeholder="Upload Image" v-model="profile.imgUrl">
+      <input type="text" min="0" id="img" class="form-control" placeholder="Upload Image" v-model="profile.imgUrl">
       
       <label for="age" class="sr-only"></label>
       <input type="number" min="0" id="age" class="form-control" placeholder="Age" v-model="profile.age" required autofocus>

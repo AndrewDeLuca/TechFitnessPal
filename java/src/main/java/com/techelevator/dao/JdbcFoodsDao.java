@@ -21,11 +21,11 @@ public class JdbcFoodsDao implements FoodsDao {
     public Foods addFood(Foods foods) {
 
 
-        String sql = "INSERT INTO foods " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO foods (profile_id, name, serving_size, number_of_servings, meal, calories)" +
+                "VALUES (?, ?, ?, ?, ?, ?) " +
+                "RETURNING food_id;";
 
-        Foods newFood = jdbcTemplate.queryForObject(sql, Foods.class,
-                foods.getFoodId(),
+        Integer foodId = jdbcTemplate.queryForObject(sql, Integer.class,
                 foods.getProfileId(),
                 foods.getName(),
                 foods.getServingSize(),
@@ -33,7 +33,30 @@ public class JdbcFoodsDao implements FoodsDao {
                 foods.getMeal(),
                 foods.getCalories());
 
-        return foods;
+        return getFoodById(foodId);
+    }
+
+    public Foods getFoodById(int foodId) {
+        String sql = "SELECT * FROM foods WHERE food_id = ?;";
+
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, foodId);
+
+        if (rowSet.next()) {
+            return mapRowToProfile(rowSet);
+        }
+        return null;
+    }
+
+    private Foods mapRowToProfile(SqlRowSet rowSet) {
+        Foods food = new Foods();
+        food.setFoodId(rowSet.getInt("food_id"));
+        food.setProfileId(rowSet.getInt("profile_id"));
+        food.setName(rowSet.getString("name"));
+        food.setServingSize(rowSet.getInt("serving_size"));
+        food.setNumberOfServings(rowSet.getInt("number_of_servings"));
+        food.setMeal(rowSet.getString("meal"));
+        food.setCalories(rowSet.getInt("calories"));
+        return food;
     }
 
     @Override
