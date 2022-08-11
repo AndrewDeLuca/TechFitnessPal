@@ -37,6 +37,7 @@
       />
       
       <button type="submit">Sign In</button>
+      <router-link :to="{ name: 'meals'}" class='tab' tag="button" >Meals</router-link>
      
     </form>
       </div>
