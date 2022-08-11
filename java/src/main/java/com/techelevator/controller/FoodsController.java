@@ -18,7 +18,7 @@ public class FoodsController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/foods", method = RequestMethod.POST)
-    public void addFood(@RequestBody Foods foods) {
-        dao.addFood(foods);
+    public Foods addFood(@RequestBody Foods foods) {
+        return dao.addFood(foods);
     }
 }
