@@ -6,6 +6,8 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import CreateProfile from '../views/CreateProfile.vue'
+import MainProfilePage from '../views/MainProfilePage'
+//import { component } from 'vue/types/umd'
 
 Vue.use(Router)
 
@@ -61,8 +63,12 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
-    }
-    
+    },
+{
+    path: "/mainprofilepage",
+    name: "mainprofilepage",
+    component: MainProfilePage
+}   
    
   ]
 })
