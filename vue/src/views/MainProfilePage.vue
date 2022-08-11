@@ -11,10 +11,30 @@
 <button>Friends</button>
 </section>
 
-<section class="header 2">
+<section class="meals">
 
-<h1>Add Food</h1>
+<section>
+<h3 class="breakfast">Breakfast</h3>
+<button>Add Breakfast</button>
+</section>
 
+<section>
+<h3 class="lunch">Lunch</h3>
+
+<button>Add Lunch</button>
+</section>
+
+<section>
+<h3 class="dinner">Dinner</h3>
+
+<button>Add Dinner</button>
+</section>
+
+<section>
+<h3 class="snacks">Snacks</h3>
+
+<button>Add Snacks</button>
+</section>
 
 
 </section>
@@ -43,24 +63,75 @@ export default {
 button{
   display: block;
  margin-top: 50px; 
+ grid-area: button;
 }
 
-img{
-float: left;
-  border-style:solid;
-  margin-right: 90px;
-}
+
 
 h1 {
 margin-top: 50px;
 font-size: 300%;
+grid-area: h1;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 color: goldenrod
+
 }
 
 h2{
 text-align: right;
 margin-left: 0px;
+grid-area: h2;
+}
+
+h3{
+margin-top: 50px;
+font-size: 300%;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: goldenrod;
+text-align: left;
+margin-right: 0px;
+}
+
+template {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+                        "Header Header Header Header"      
+                        "meals meals '' '' "
+                         "meals meals '' '' "
+                         "'' '' '' ''";
+                        
+    gap: 10px;
+  gap: 20px;
+
+}
+
+.meals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:  "breakfast lunch"
+                         "dinner snacks";
+                        
+    gap: 10px;
+  gap: 20px;
+
+}
+
+.meals{
+  grid-area: meals;
+}
+
+.header{
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "h1 h1 h1 h1"
+                       "img button '' h2";
+  
+}
+
+button{
+  grid-area: button;
 }
 
 </style>
