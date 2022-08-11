@@ -7,7 +7,7 @@
             <div class="alert alert-danger" role="alert"></div>
       
       <label for="img" class="sr-only"></label>
-      <input type="text" min="0" is="img" class="form-control" placeholder="Upload Image" v-model="profile.imgUrl">
+      <input type="text" min="0" id="img" class="form-control" placeholder="Upload Image" v-model="profile.imgUrl">
       
       <label for="age" class="sr-only"></label>
       <input type="number" min="0" id="age" class="form-control" placeholder="Age" v-model="profile.age" required autofocus>
@@ -25,7 +25,7 @@
       <input type="number" min="0" id="goal_calories" class="form-control" placeholder="Goal Calories" v-model="profile.goalCalories" required>
 
       <label for="date_of_birth" class="sr-only"></label>
-      <input type="date" id="birthday" class="form-control" placeholder="YYYY/MM/DD" v-model="profile.dateOfBirth">
+      <input type="date" id="birthday" class="form-control" v-model="profile.dateOfBirth">
 
       <label for="display_name" class="sr-only"></label>
       <input type="text" id="display_name" class="form-control" placeholder="Display Name" v-model="profile.displayName">
@@ -67,10 +67,7 @@ export default {
             });
             }
           }
-        
-    
-
-}
+        }
 </script>
 
 <style>

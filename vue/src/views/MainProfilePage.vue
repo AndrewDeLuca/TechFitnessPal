@@ -9,6 +9,7 @@
 <button>Edit Profile</button>
 <button>Goals</button>
 <button>Friends</button>
+<router-link :to="{ name: 'foods'}" class='tab' tag="button">Add Food</router-link>
 </section>
 
 <section class="meals">

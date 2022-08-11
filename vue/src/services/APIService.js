@@ -16,5 +16,4 @@ export default {
             return thing;
         });
     }
-
 }

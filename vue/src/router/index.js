@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import CreateProfile from '../views/CreateProfile.vue'
 import MainProfilePage from '../views/MainProfilePage'
+import Foods from '../views/Foods.vue'
 //import { component } from 'vue/types/umd'
 
 Vue.use(Router)
@@ -64,11 +65,18 @@ const router = new Router({
         requiresAuth: false
       }
     },
-{
+    {
     path: "/mainprofilepage",
     name: "mainprofilepage",
     component: MainProfilePage
-}   
+    },
+    {
+    path: "/foods",
+    name: "foods",
+    component: Foods
+    }
+    
+
    
   ]
 })
