@@ -42,12 +42,12 @@ public class JdbcFoodsDao implements FoodsDao {
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, foodId);
 
         if (rowSet.next()) {
-            return mapRowToProfile(rowSet);
+            return mapRowToFoods(rowSet);
         }
         return null;
     }
 
-    private Foods mapRowToProfile(SqlRowSet rowSet) {
+    private Foods mapRowToFoods(SqlRowSet rowSet) {
         Foods food = new Foods();
         food.setFoodId(rowSet.getInt("food_id"));
         food.setProfileId(rowSet.getInt("profile_id"));
