@@ -8,6 +8,7 @@ import store from '../store/index'
 import CreateProfile from '../views/CreateProfile.vue'
 import MainProfilePage from '../views/MainProfilePage'
 import Foods from '../views/Foods.vue'
+import Meals from '../views/Meals.vue'
 //import { component } from 'vue/types/umd'
 
 Vue.use(Router)
@@ -74,6 +75,12 @@ const router = new Router({
     path: "/foods",
     name: "foods",
     component: Foods
+    },
+    {
+      path: "/meals",
+      name: "meals",
+      component: Meals
+
     }
     
 
