@@ -19,8 +19,8 @@ public class JdbcProfileDao implements ProfileDao {
     @Override
     public Profile create(Profile profile) {
         String sql = "" +
-                "INSERT INTO profile (user_id, goal_calories, current_weight, desired_weight, age, height) " +
-                "VALUES (?, ?, ?, ?, ?, ?) " +
+                "INSERT INTO profile (user_id, goal_calories, current_weight, desired_weight, age, height, date_of_birth, img_url, display_name) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) " +
                 "RETURNING profile_id;";
         Integer profileId = jdbcTemplate.queryForObject(sql, Integer.class,
                 profile.getUserId(),
@@ -28,7 +28,11 @@ public class JdbcProfileDao implements ProfileDao {
                 profile.getCurrentWeight(),
                 profile.getDesiredWeight(),
                 profile.getAge(),
-                profile.getHeight());
+                profile.getHeight(),
+                profile.getDateOfBirth(),
+                profile.getImgUrl(),
+                profile.getDisplayName());
+
 
         return getProfileById(profileId);
     }
@@ -53,6 +57,9 @@ public class JdbcProfileDao implements ProfileDao {
         profile.setDesiredWeight(rowSet.getInt("desired_weight"));
         profile.setAge(rowSet.getInt("age"));
         profile.setHeight(rowSet.getInt("height"));
+        profile.setDateOfBirth(rowSet.getDate("date_of_birth"));
+        profile.setImgUrl(rowSet.getString("img_url"));
+        profile.setDisplayName(rowSet.getString("display_name"));
         return profile;
     }
 
