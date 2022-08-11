@@ -1,9 +1,12 @@
 <template>
   <div>
+      <input type="text" id="foodSearch" placeholder="Enter Search Term" v="search">
+      <button type="submit">fml</button>
+      
       <form class="form-register" @submit.prevent="addFood">
 
           <label for="name" class="sr-only"></label>
-          <input type="text" id="name" class="form-control" value="" placeholder="Name" :onclick="search" v-model="food.name">
+          <input type="text" id="name" class="form-control" placeholder="Name" v-model="food.name">
 
           <label for="servingSize" class="sr-only"></label>
           <input type="number" id="servingSize" class="form-control" placeholder="Serving Size" v-model="food.servingSize">
