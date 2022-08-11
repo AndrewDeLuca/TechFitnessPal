@@ -9,32 +9,31 @@
 <button>Edit Profile</button>
 <button>Goals</button>
 <button>Friends</button>
-<router-link :to="{ name: 'foods'}" class='tab' tag="button">Add Food</router-link>
 </section>
 
 <section class="meals">
 
 <section>
 <h3 class="breakfast">Breakfast</h3>
-<button>Add Breakfast</button>
+<router-link :to="{ name: 'foods' }" class='tab' tag="button">Add Breakfast</router-link>
 </section>
 
 <section>
 <h3 class="lunch">Lunch</h3>
 
-<button>Add Lunch</button>
+<router-link :to="{ name: 'foods' }" class='tab' tag="button">Add Lunch</router-link>
 </section>
 
 <section>
 <h3 class="dinner">Dinner</h3>
 
-<button>Add Dinner</button>
+<router-link :to="{ name: 'foods' }" class='tab' tag="button">Add Dinner</router-link>
 </section>
 
 <section>
 <h3 class="snacks">Snacks</h3>
 
-<button>Add Snacks</button>
+<router-link :to="{ name: 'foods' }" class='tab' tag="button">Add Snack</router-link>
 </section>
 
 
