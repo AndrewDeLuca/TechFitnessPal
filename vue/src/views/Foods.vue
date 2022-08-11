@@ -3,7 +3,7 @@
       <form class="form-register" @submit.prevent="addFood">
 
           <label for="name" class="sr-only"></label>
-          <input type="text" id="name" class="form-control" placeholder="Name" v-model="food.name">
+          <input type="text" id="name" class="form-control" value="" placeholder="Name" :onclick="search" v-model="food.name">
 
           <label for="servingSize" class="sr-only"></label>
           <input type="number" id="servingSize" class="form-control" placeholder="Serving Size" v-model="food.servingSize">
@@ -17,13 +17,14 @@
           <label for="calories" class="sr-only"></label>
           <input type="number" id="calories" class="form-control" placeholder="Calories" v-model="food.calories">
 
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Create Profile</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Add Food</button>
       </form>
   </div>
 </template>
 
 <script>
 import foodService from '../services/FoodService.js'
+import APIService from '../services/APIService.js'
 
 export default {
     name: 'food',
@@ -48,7 +49,15 @@ export default {
             }
         }
         
-            )}
+    )},
+        search() {
+            const userInput = document.getElementById('name').value;
+            APIService.foodSearch(userInput).then(response => {
+                if (response.status === 200) {
+                    console.log(response.data);
+                }
+            })
+        }
     }
 
 }
