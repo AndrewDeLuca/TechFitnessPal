@@ -37,6 +37,18 @@ public class JdbcProfileDao implements ProfileDao {
         return getProfileById(profileId);
     }
 
+    @Override
+    public Profile get(int userId) {
+        String sql = "SELECT * FROM profile WHERE user_id = ?;";
+
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, userId);
+
+        if (rowSet.next()) {
+            return mapRowToProfile(rowSet);
+        }
+        return null;
+    }
+
     private Profile getProfileById(int profileId) {
         String sql = "SELECT * FROM profile WHERE profile_id = ?;";
 

@@ -43,14 +43,12 @@ CREATE TABLE foods (
 CREATE TABLE meals (
    meal_id SERIAL,
    profile_id int,
-   food_id int,
    number_of_servings int NOT NULL,
    meal_name varchar(50),
    calories int NOT NULL,
 
    CONSTRAINT PK_meals PRIMARY KEY (meal_id),
-   CONSTRAINT FK_meals_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id),
-   CONSTRAINT FK_meals_food_id FOREIGN KEY (food_id) REFERENCES foods (food_id)
+   CONSTRAINT FK_meals_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id)
 );
 
 CREATE TABLE mealsFoods (

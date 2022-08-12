@@ -22,4 +22,9 @@ public class ProfileController {
     public Profile create(@RequestBody Profile profile) {
         return profileDao.create(profile);
     }
+
+    @RequestMapping(path = "/profile/{userId}", method = RequestMethod.GET)
+    public Profile get(@PathVariable int userId) {
+        return profileDao.get(userId);
+    }
 }

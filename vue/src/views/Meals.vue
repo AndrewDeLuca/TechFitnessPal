@@ -36,19 +36,19 @@
 </template>
 
 <script>
-import mealsService from "../services/MealsService.js";
+import mealsService from '../services/MealsService.js';
+import profileService from '../services/ProfileService.js'
 export default {
-  name: "meals",
+  name: 'meal',
   components: {},
   data() {
     return {
       meal: {
-        mealId: "",
-        foodId: "",
-        numberOfServings: "",
-        mealName: "",
-        calories: "",
-        profileId: this.$store.state.user.id,
+        mealId: '',
+        numberOfServings: '',
+        mealName: '',
+        calories: '',
+        profileId: ''
       },
     };
   },
@@ -61,6 +61,12 @@ export default {
         }
       });
     },
+    getProfileId(userId) {
+      userId = this.$store.state.user.id;
+      profileService.getProfile(userId).then(response => {
+        return response.data;
+      })
+    }
   },
 };
 </script>

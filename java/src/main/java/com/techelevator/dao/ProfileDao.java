@@ -6,6 +6,8 @@ public interface ProfileDao {
 
     Profile create(Profile profile);
 
+    Profile get(int userId);
+
     int calculateTotalDailyCalories (int userId);
 
     int calculateUserBmi(int userId);

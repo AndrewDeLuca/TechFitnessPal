@@ -17,13 +17,12 @@ public class JdbcMealsDao implements MealsDao {
     public Meals addMeal(Meals meals) {
 
 
-        String sql = "INSERT INTO meals (profile_id, food_id, number_of_servings, meal_name, calories)" +
-                "VALUES (?, ?, ?, ?, ?) " +
+        String sql = "INSERT INTO meals (profile_id, number_of_servings, meal_name, calories)" +
+                "VALUES (?, ?, ?, ?) " +
                 "RETURNING meal_id;";
 
         Integer mealsId = jdbcTemplate.queryForObject(sql, Integer.class,
                 meals.getProfileId(),
-                meals.getFoodId(),
                 meals.getNumberOfServings(),
                 meals.getMealName(),
                 meals.getCalories());
@@ -32,7 +31,7 @@ public class JdbcMealsDao implements MealsDao {
     }
 
     public Meals getMealsById(int mealId) {
-        String sql = "SELECT * FROM foods WHERE food_id = ?;";
+        String sql = "SELECT * FROM meals WHERE meal_id = ?;";
 
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, mealId);
 
@@ -46,7 +45,6 @@ public class JdbcMealsDao implements MealsDao {
         Meals meals = new Meals();
         meals.setMealId(rowSet.getInt("meal_id"));
         meals.setProfileId(rowSet.getInt("profile_id"));
-        meals.setFoodId(rowSet.getInt("food_id"));
         meals.setNumberOfServings(rowSet.getInt("number_of_servings"));
         meals.setMealName(rowSet.getString("meal_name"));
         meals.setCalories(rowSet.getInt("calories"));

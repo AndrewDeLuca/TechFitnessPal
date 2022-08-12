@@ -34,6 +34,7 @@
 <h3 class="snacks">Snacks</h3>
 
 <router-link :to="{ name: 'foods' }" class='tab' tag="button">Add Snack</router-link>
+<router-link :to="{ name: 'meals'}" class='tab' tag="button" >Meals</router-link>
 </section>
 
 
