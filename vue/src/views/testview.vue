@@ -1,11 +1,15 @@
 <template>
-  <div id="app">
-    <img :src="require('./assets/logo.png')" />
+  <div class="grid_container"></div>
 </template>
 
 <script>
-export default {};
+export default {
+
+}
 </script>
 
 <style>
+.grid-container {
+  
+}
 </style>

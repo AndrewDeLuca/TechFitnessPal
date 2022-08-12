@@ -67,14 +67,14 @@ const router = new Router({
       }
     },
     {
-    path: "/mainprofilepage",
-    name: "mainprofilepage",
-    component: MainProfilePage
+      path: "/mainprofilepage",
+      name: "mainprofilepage",
+      component: MainProfilePage
     },
     {
-    path: "/foods",
-    name: "foods",
-    component: Foods
+      path: "/foods",
+      name: "foods",
+      component: Foods
     },
     {
       path: "/meals",
@@ -82,9 +82,9 @@ const router = new Router({
       component: Meals
 
     }
-    
 
-   
+
+
   ]
 })
 

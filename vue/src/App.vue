@@ -10,6 +10,16 @@
   </div>
 </template>
 
+<script>
+//import MainProfilePage from '../views/MainProfilePage.vue'
+
+export default {
+  //components: MainProfilePage
+
+}
+</script>
+
+
 
 <style>
 
