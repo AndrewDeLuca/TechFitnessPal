@@ -40,7 +40,8 @@ export default {
                 numberOfServings: '',
                 meal: '',
                 calories: '',
-                profileId: this.$store.state.user.id
+                profileId: this.$store.state.user.id,
+                foodConsumed: ''
             }
         }
     },

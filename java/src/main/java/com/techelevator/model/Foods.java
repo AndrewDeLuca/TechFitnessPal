@@ -1,6 +1,10 @@
 package com.techelevator.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.validation.constraints.NotEmpty;
+import java.security.Timestamp;
+import java.util.Date;
 
 public class Foods {
 
@@ -17,6 +21,11 @@ public class Foods {
     private int foodId;
     @NotEmpty
     private int profileId;
+    private Timestamp foodConsumed;
+
+    public Timestamp getFoodConsumed() {
+        return foodConsumed;
+    }
 
 
     public String getName() {
@@ -73,5 +82,8 @@ public class Foods {
 
     public void setProfileId(int profileId) {
         this.profileId = profileId;
+    }
+
+    public void setFoodConsumed(java.sql.Timestamp food_consumed) {
     }
 }

@@ -35,7 +35,7 @@ CREATE TABLE foods (
 	number_of_servings int NOT NULL,
 	meal varchar(50),
 	calories int NOT NULL,
-
+    food_consumed TIMESTAMP,
 	CONSTRAINT PK_food PRIMARY KEY (food_id),
 	CONSTRAINT FK_food_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id)
 );
