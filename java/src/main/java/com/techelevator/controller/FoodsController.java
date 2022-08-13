@@ -21,4 +21,9 @@ public class FoodsController {
     public Foods addFood(@RequestBody Foods foods) {
         return dao.addFood(foods);
     }
+
+    @RequestMapping(path = "/foods/{meal}", method = RequestMethod.GET)
+    public Foods getFoodsByMeal(@PathVariable String meal) {
+        return dao.getFoodByMeal(meal);
+    }
 }

@@ -12,6 +12,8 @@ Vue.use(Vuex)
 const currentToken = localStorage.getItem('token')
 const currentUser = JSON.parse(localStorage.getItem('user'));
 //const currentProfile = JSON.parse(localStorage.getItem('profile'));
+var today = new Date();
+var date = today.toLocaleString();
 
 if(currentToken != null) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${currentToken}`;
@@ -21,15 +23,17 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
-    active_meal: {
-      meal: {
-      profile_id: '',
-      number_of_servings: '',
-      meal_name: '',
-      calories: ''
+    currentFood: {
+      food: {
+        name: '',
+        servingSize: '',
+        numberOfServings: '',
+        meal: '',
+        calories: '',
+        userId: currentUser.id,
+        foodConsumed: date
+      }
     }
-    }
-    
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {

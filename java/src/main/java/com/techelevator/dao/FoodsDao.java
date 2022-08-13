@@ -7,6 +7,8 @@ public interface FoodsDao {
 
     public Foods addFood(Foods foods);
 
+    Foods getFoodByMeal(String meal);
+
 
 
     public int findFood(int foodId);

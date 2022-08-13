@@ -37,6 +37,20 @@ public class JdbcFoodsDao implements FoodsDao {
         return getFoodById(foodId);
     }
 
+    @Override
+    public Foods getFoodByMeal(String meal) {
+        String sql = "SELECT * " +
+                "FROM foods " +
+                "WHERE meal = ?;";
+
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, meal);
+
+        while (rowSet.next()) {
+            return mapRowToFoods(rowSet);
+        }
+        return null;
+    }
+
     public Foods getFoodById(int foodId) {
         String sql = "SELECT * FROM foods WHERE food_id = ?;";
 
