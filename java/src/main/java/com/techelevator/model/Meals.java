@@ -2,10 +2,19 @@ package com.techelevator.model;
 
 public class Meals {
     private int mealId;
-    private int profileId;
     private int numberOfServings;
     private String mealName;
     private int calories;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    private int userId;
 
     public int getMealId() {
         return mealId;
@@ -13,14 +22,6 @@ public class Meals {
 
     public void setMealId(int mealId) {
         this.mealId = mealId;
-    }
-
-    public int getProfileId() {
-        return profileId;
-    }
-
-    public void setProfileId(int profileId) {
-        this.profileId = profileId;
     }
 
     public int getNumberOfServings() {

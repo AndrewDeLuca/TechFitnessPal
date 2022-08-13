@@ -12,7 +12,6 @@ CREATE TABLE users (
 );
 
 CREATE TABLE profile (
-	profile_id SERIAL,
 	user_id int,
 	goal_calories int,
 	current_weight int NOT NULL,
@@ -22,33 +21,34 @@ CREATE TABLE profile (
 	date_of_birth DATE,
 	img_url varchar(100),
 	display_name varchar(50),
-	
-	CONSTRAINT PK_profile PRIMARY KEY (profile_id),
+
 	CONSTRAINT FK_profile_user_id FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE foods (
 	food_id SERIAL,
-	profile_id int,
+	user_id int,
 	name varchar(50) NOT NULL,
 	serving_size int NOT NULL,
 	number_of_servings int NOT NULL,
 	meal varchar(50),
 	calories int NOT NULL,
-    food_consumed TIMESTAMP,
+    food_consumed varchar(50),
+
 	CONSTRAINT PK_food PRIMARY KEY (food_id),
-	CONSTRAINT FK_food_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id)
+	CONSTRAINT FK_foods_user_id FOREIGN KEY (user_id) REFERENCES users (user_id)
+
 );
 
 CREATE TABLE meals (
    meal_id SERIAL,
-   profile_id int,
+   user_id int,
    number_of_servings int NOT NULL,
    meal_name varchar(50),
    calories int NOT NULL,
 
    CONSTRAINT PK_meals PRIMARY KEY (meal_id),
-   CONSTRAINT FK_meals_profile_id FOREIGN KEY (profile_id) REFERENCES profile (profile_id)
+   CONSTRAINT FK_meals_user_id FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE mealsFoods (

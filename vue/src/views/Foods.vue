@@ -28,8 +28,10 @@
 <script>
 import foodService from '../services/FoodService.js'
 import APIService from '../services/APIService.js'
-
+var today = new Date();
+var date = today.toLocaleString();
 export default {
+
     name: 'food',
     components: {},
     data() {
@@ -40,8 +42,8 @@ export default {
                 numberOfServings: '',
                 meal: '',
                 calories: '',
-                profileId: this.$store.state.user.id,
-                foodConsumed: ''
+                userId: this.$store.state.user.id,
+                foodConsumed: date
             }
         }
     },

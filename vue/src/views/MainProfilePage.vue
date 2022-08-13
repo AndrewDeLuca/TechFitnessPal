@@ -11,7 +11,7 @@
         alt="profile_picture"
       />
       <section class="button">
-        <button class="edit">Edit Profile</button>
+        <router-link :to="{ name: 'profile'}" class='edit' tag="button">Edit Profile</router-link>
         <button class="edit">Goals</button>
         <button class="edit">Friends</button>
       </section>

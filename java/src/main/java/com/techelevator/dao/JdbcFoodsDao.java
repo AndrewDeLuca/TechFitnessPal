@@ -21,12 +21,12 @@ public class JdbcFoodsDao implements FoodsDao {
     public Foods addFood(Foods foods) {
 
 
-        String sql = "INSERT INTO foods (profile_id, name, serving_size, number_of_servings, meal, calories, food_consumed)" +
+        String sql = "INSERT INTO foods (user_id, name, serving_size, number_of_servings, meal, calories, food_consumed)" +
                 "VALUES (?, ?, ?, ?, ?, ?, ?) " +
                 "RETURNING food_id;";
 
         Integer foodId = jdbcTemplate.queryForObject(sql, Integer.class,
-                foods.getProfileId(),
+                foods.getUserId(),
                 foods.getName(),
                 foods.getServingSize(),
                 foods.getNumberOfServings(),
@@ -51,13 +51,13 @@ public class JdbcFoodsDao implements FoodsDao {
     private Foods mapRowToFoods(SqlRowSet rowSet) {
         Foods food = new Foods();
         food.setFoodId(rowSet.getInt("food_id"));
-        food.setProfileId(rowSet.getInt("profile_id"));
+        food.setUserId(rowSet.getInt("user_id"));
         food.setName(rowSet.getString("name"));
         food.setServingSize(rowSet.getInt("serving_size"));
         food.setNumberOfServings(rowSet.getInt("number_of_servings"));
         food.setMeal(rowSet.getString("meal"));
         food.setCalories(rowSet.getInt("calories"));
-        food.setFoodConsumed(rowSet.getTimestamp("food_consumed"));
+        food.setFoodConsumed(rowSet.getString("food_consumed"));
         return food;
     }
 
@@ -67,18 +67,18 @@ public class JdbcFoodsDao implements FoodsDao {
     }
 
 
-    private Foods mapRowToFoodsList(SqlRowSet rowSet) {
-    Foods myList = new Foods();
-    myList.setCalories(rowSet.getInt("calories"));
-    myList.setFoodId(rowSet.getInt("food_id"));
-    myList.setName(rowSet.getString("name"));
-    myList.setNumberOfServings(rowSet.getInt("number_of_servings"));
-    myList.setServingSize(rowSet.getInt("serving_size"));
-    myList.setProfileId(rowSet.getInt("profile_id"));
-    myList.setMeal(rowSet.getString("meal"));
-    //myList.setFoodConsumed(rowSet.getString("food_consumed"));                           ///may not need this here//
-
-
-return myList;
-    }
+//    private Foods mapRowToFoodsList(SqlRowSet rowSet) {
+//    Foods myList = new Foods();
+//    myList.setCalories(rowSet.getInt("calories"));
+//    myList.setFoodId(rowSet.getInt("food_id"));
+//    myList.setName(rowSet.getString("name"));
+//    myList.setNumberOfServings(rowSet.getInt("number_of_servings"));
+//    myList.setServingSize(rowSet.getInt("serving_size"));
+//    myList.setProfileId(rowSet.getInt("profile_id"));
+//    myList.setMeal(rowSet.getString("meal"));
+//    //myList.setFoodConsumed(rowSet.getString("food_consumed"));                           ///may not need this here//
+//
+//
+//return myList;
+//    }
 }

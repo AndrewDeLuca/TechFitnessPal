@@ -21,7 +21,15 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
-    //profile: currentProfile || {},
+    active_meal: {
+      meal: {
+      profile_id: '',
+      number_of_servings: '',
+      meal_name: '',
+      calories: ''
+    }
+    }
+    
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -43,6 +51,9 @@ export default new Vuex.Store({
     SET_PROFILE(state, profile) {
       state.profile = profile;
       localStorage.setItem('profile', JSON.stringify(profile));
+    },
+    SET_ACTIVE_MEAL(state, data) {
+      state.active_meal = data;
     }
   }
 })

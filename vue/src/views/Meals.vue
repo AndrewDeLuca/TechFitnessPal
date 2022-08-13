@@ -48,7 +48,7 @@ export default {
         numberOfServings: '',
         mealName: '',
         calories: '',
-        profileId: ''
+        userId: this.$store.state.user.id
       },
     };
   },

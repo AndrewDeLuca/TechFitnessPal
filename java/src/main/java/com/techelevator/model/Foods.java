@@ -19,12 +19,23 @@ public class Foods {
     private int calories;
     @NotEmpty
     private int foodId;
-    @NotEmpty
-    private int profileId;
-    private Timestamp foodConsumed;
+    private String foodConsumed;
+    private int userId;
 
-    public Timestamp getFoodConsumed() {
+    public String getFoodConsumed() {
         return foodConsumed;
+    }
+
+    public void setFoodConsumed(String foodConsumed) {
+        this.foodConsumed = foodConsumed;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
 
@@ -74,16 +85,5 @@ public class Foods {
 
     public void setFoodId(int foodId) {
         this.foodId = foodId;
-    }
-
-    public int getProfileId() {
-        return profileId;
-    }
-
-    public void setProfileId(int profileId) {
-        this.profileId = profileId;
-    }
-
-    public void setFoodConsumed(java.sql.Timestamp food_consumed) {
     }
 }

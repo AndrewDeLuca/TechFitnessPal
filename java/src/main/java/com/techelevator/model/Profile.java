@@ -18,8 +18,6 @@ public class Profile {
     @NotEmpty
     private int height;
 
-    private int profileId;
-
     private String displayName;
     private Date dateOfBirth;
     private String imgUrl;
@@ -99,11 +97,4 @@ public class Profile {
         this.height = height;
     }
 
-    public int getProfileId() {
-        return profileId;
-    }
-
-    public void setProfileId(int profileId) {
-        this.profileId = profileId;
-    }
 }
