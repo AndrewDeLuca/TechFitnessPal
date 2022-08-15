@@ -111,17 +111,22 @@
         </ul>
         <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
+<<<<<<< HEAD
       <section class="graph">
         
       </section>
+=======
+      <bar-chart></bar-chart>
+>>>>>>> 0dbd2f2495bdb18c6c008d615d20433f0396cdf6
     </section>
   </div>
 </template>
 
 <script>
 import foodService from '../services/FoodService.js'
-
+import BarChart from '../components/BarChart.vue'
 export default {
+  component: { BarChart },
   methods: {
     getFoodByMeal(meal) {
       foodService.getFoodByMeal(meal).then(response => {
