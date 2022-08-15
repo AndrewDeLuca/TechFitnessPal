@@ -9,7 +9,5 @@ export default {
 </script>
 
 <style>
-.grid-container {
-  
-}
+
 </style>

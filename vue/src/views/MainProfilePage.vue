@@ -49,7 +49,7 @@
           <li>No meal added</li>
           <li>No meal added</li>
         </ul>
-        <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
+        <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
 
       <section class="lunch">
@@ -69,7 +69,7 @@
           <li>No meal added</li>
           <li>No meal added</li>
         </ul>
-        <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
+        <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
 
       <section class="dinner">
@@ -89,7 +89,7 @@
           <li>No meal added</li>
           <li>No meal added</li>
         </ul>
-        <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
+        <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
 
       <section class="snacks">
@@ -109,9 +109,11 @@
           <li>No meal added</li>
           <li>No meal added</li>
         </ul>
-        <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
+        <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
-      <bar-chart></bar-chart>
+      <section class="graph">
+        
+      </section>
     </section>
   </div>
 </template>
