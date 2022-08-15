@@ -12,10 +12,10 @@
 
 <script>
 //import MainProfilePage from '../views/MainProfilePage.vue'
-
+import BarChart from './components/BarChart.vue'
 export default {
   //components: MainProfilePage
-
+component: { BarChart }
 }
 </script>
 
