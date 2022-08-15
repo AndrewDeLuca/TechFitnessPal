@@ -9,6 +9,7 @@ import CreateProfile from '../views/CreateProfile.vue'
 import MainProfilePage from '../views/MainProfilePage'
 import Foods from '../views/Foods.vue'
 import Meals from '../views/Meals.vue'
+import ViewQuickMeal from '../views/ViewQuickMeal.vue'
 //import { component } from 'vue/types/umd'
 
 Vue.use(Router)
@@ -80,6 +81,15 @@ const router = new Router({
       path: "/meals",
       name: "meals",
       component: Meals
+
+    },
+
+    {
+      path: "/viewquickmeal",
+      name: "viewquickmeal",
+      component: ViewQuickMeal 
+
+
 
     }
 

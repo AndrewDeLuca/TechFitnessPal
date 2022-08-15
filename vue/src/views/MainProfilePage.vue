@@ -49,7 +49,7 @@
           <li>4</li>
           <li>5</li>
         </ul>
-        <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
+        <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
 
       <section class="lunch">
@@ -69,7 +69,7 @@
           <li>4</li>
           <li>5</li>
         </ul>
-        <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
+        <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
 
       <section class="dinner">
@@ -89,7 +89,7 @@
           <li>4</li>
           <li>5</li>
         </ul>
-        <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
+        <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
 
       <section class="snacks">
@@ -109,15 +109,11 @@
           <li>4</li>
           <li>5</li>
         </ul>
-        <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
+        <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
-<<<<<<< HEAD
       <section class="graph">
         
       </section>
-=======
-      <bar-chart></bar-chart>
->>>>>>> 0dbd2f2495bdb18c6c008d615d20433f0396cdf6
     </section>
   </div>
 </template>
