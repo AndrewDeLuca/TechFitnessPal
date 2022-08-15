@@ -1,7 +1,7 @@
 <template>
   <div>
       <ul class="list">
-<li v-for="m in meals" v-bind:key="m.meal_id">{{ m.mealName }}</li>
+<li v-for="m in meals" v-bind:key="m.meal_id">{{ m.mealName }}  ||  {{ m.calories }}</li>
         </ul>
 
 
@@ -14,12 +14,7 @@
 </template>
 
 <script>
-export default {
-
-}
-</script>
 import mealsService from '../services/MealsService.js'
-
 export default {
   data() {
     return {
@@ -28,13 +23,20 @@ export default {
     },
     methods: {
       getMeals() {
-        return this.meal = response.data;
+        mealsService.getMeals().then(response => {
+          return this.meals = response.data;
+        })
+        
       }
     },
     created() {
       this.getMeals();
     }
   }
+</script>
+
+
+
 
 
 <style>

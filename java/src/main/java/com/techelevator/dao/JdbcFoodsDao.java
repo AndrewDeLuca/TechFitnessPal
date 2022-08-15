@@ -51,6 +51,22 @@ public class JdbcFoodsDao implements FoodsDao {
         return foodsList;
     }
 
+    @Override
+    public Foods updateFood(int food_id) {
+        Foods updatedFood = new Foods();
+        String sql = "INSERT INTO foods (user_id, name, serving_size, number_of_servings, meal, calories, food_consumed) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?) " +
+                "WHERE food_id = ?;";
+
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, food_id);
+
+
+
+
+
+        return null;
+    }
+
     public Foods getFoodById(int foodId) {
         String sql = "SELECT * FROM foods WHERE food_id = ?;";
 

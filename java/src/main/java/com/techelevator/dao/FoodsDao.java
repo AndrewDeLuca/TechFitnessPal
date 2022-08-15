@@ -11,6 +11,8 @@ public interface FoodsDao {
 
     List<Foods> getFood();
 
+    Foods updateFood(int food_id);
+
 
 
     public int findFood(int foodId);

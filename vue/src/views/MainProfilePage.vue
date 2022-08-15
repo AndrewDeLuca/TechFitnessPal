@@ -14,6 +14,7 @@
         <router-link :to="{ name: 'profile'}" class='edit' tag="button">Edit Profile</router-link>
         <button class="edit">Goals</button>
         <button class="edit">Friends</button>
+        <router-link :to="{ name: 'meals' }" class="tab" tag="button">Create Meal</router-link>
       </section>
       <section class="calories">
         <h2>current calories/</h2>
@@ -32,6 +33,7 @@
     </section>
 
     <section class="meals">
+      
       <section class="breakfast">
         <h3>Breakfast</h3>
         <router-link :to="{ name: 'foods' }" class="tab" tag="button"
