@@ -141,7 +141,7 @@ template {
     "header header header header"
     "meals meals '' '' "
     "meals meals '' '' "
-    "'' '' '' ''";
+    "graph graph graph graph ";
 
   gap: 10px;
   gap: 20px;
@@ -284,5 +284,12 @@ span {
 
   border-style: solid;
   border: steelblue;
+}
+
+.graph{
+   border-style: solid;
+  height: 450px;
+   grid-area: span;
+
 }
 </style>
