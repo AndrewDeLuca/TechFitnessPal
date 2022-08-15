@@ -38,16 +38,16 @@
           >Add Breakfast</router-link
         >
         <ul class="list">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
         </ul>
         <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
@@ -58,16 +58,16 @@
           >Add Lunch</router-link
         >
         <ul class="list">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
         </ul>
         <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
@@ -78,16 +78,16 @@
           >Add Dinner</router-link
         >
                 <ul class="list">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
         </ul>
         <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
@@ -98,16 +98,16 @@
           >Add Snack</router-link
         >
         <ul class="list">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
+          <li>No meal added</li>
         </ul>
         <router-link :to="{ name: 'meals' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
