@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <BarChart />
       <!-- <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp; -->
       <router-link :to="{ name: 'login'}" class='tab' tag="button"> Sign In</router-link>
       <router-link :to="{ name: 'register'}" class='tab' tag="button" >Sign Up</router-link>
@@ -11,11 +12,10 @@
 </template>
 
 <script>
-//import MainProfilePage from '../views/MainProfilePage.vue'
 import BarChart from './components/BarChart.vue'
 export default {
-  //components: MainProfilePage
-component: { BarChart }
+  name: 'App',
+  components: { BarChart }
 }
 </script>
 

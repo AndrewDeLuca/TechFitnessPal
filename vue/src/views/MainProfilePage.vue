@@ -121,6 +121,7 @@
 <script>
 import foodService from '../services/FoodService.js'
 import BarChart from '../components/BarChart.vue'
+
 export default {
   component: { BarChart },
   methods: {
