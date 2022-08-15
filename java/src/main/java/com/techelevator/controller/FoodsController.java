@@ -22,8 +22,8 @@ public class FoodsController {
         return dao.addFood(foods);
     }
 
-    @RequestMapping(path = "/foods/{meal}", method = RequestMethod.GET)
-    public Foods getFoodsByMeal(@PathVariable String meal) {
-        return dao.getFoodByMeal(meal);
+    @RequestMapping(path = "/foods", method = RequestMethod.GET)
+    public List<Foods> getFoods() {
+        return dao.getFood();
     }
 }

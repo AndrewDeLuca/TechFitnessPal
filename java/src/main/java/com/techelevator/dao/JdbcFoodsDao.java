@@ -4,7 +4,7 @@ import com.techelevator.model.Foods;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
-import java.util.Date;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class JdbcFoodsDao implements FoodsDao {
                 foods.getName(),
                 foods.getServingSize(),
                 foods.getNumberOfServings(),
-                foods.getMeal(),
+                foods.getMeal().toLowerCase(),
                 foods.getCalories(),
                 foods.getFoodConsumed());
 
@@ -38,17 +38,17 @@ public class JdbcFoodsDao implements FoodsDao {
     }
 
     @Override
-    public Foods getFoodByMeal(String meal) {
+    public List<Foods> getFood() {
+        List<Foods> foodsList = new ArrayList<>();
         String sql = "SELECT * " +
-                "FROM foods " +
-                "WHERE meal = ?;";
+                "FROM foods;";
 
-        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, meal);
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql);
 
         while (rowSet.next()) {
-            return mapRowToFoods(rowSet);
+            foodsList.add(mapRowToFoods(rowSet));
         }
-        return null;
+        return foodsList;
     }
 
     public Foods getFoodById(int foodId) {
@@ -69,7 +69,7 @@ public class JdbcFoodsDao implements FoodsDao {
         food.setName(rowSet.getString("name"));
         food.setServingSize(rowSet.getInt("serving_size"));
         food.setNumberOfServings(rowSet.getInt("number_of_servings"));
-        food.setMeal(rowSet.getString("meal"));
+        food.setMeal(rowSet.getString("meal").toLowerCase());
         food.setCalories(rowSet.getInt("calories"));
         food.setFoodConsumed(rowSet.getString("food_consumed"));
         return food;

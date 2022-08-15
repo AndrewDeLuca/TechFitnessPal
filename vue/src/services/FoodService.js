@@ -4,7 +4,7 @@ export default {
     addFood(food) {
         return axios.post('/foods', food)
     },
-    getFoodByMeal(meal) {
-        return axios.get('/foods', meal)
+    getFood() {
+        return axios.get('/foods')
     }
 }

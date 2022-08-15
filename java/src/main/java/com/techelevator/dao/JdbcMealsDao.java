@@ -6,6 +6,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class JdbcMealsDao implements MealsDao {
     private final JdbcTemplate jdbcTemplate;
@@ -28,6 +31,20 @@ public class JdbcMealsDao implements MealsDao {
                 meals.getCalories());
 
         return getMealsById(mealsId);
+    }
+
+    @Override
+    public List<Meals> getMeals() {
+        List<Meals> mealsList = new ArrayList<>();
+        String sql = "SELECT * " +
+                "FROM meals;";
+
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql);
+
+        while (rowSet.next()) {
+            mealsList.add(mapRowToMeals(rowSet));
+        }
+        return mealsList;
     }
 
     public Meals getMealsById(int mealId) {

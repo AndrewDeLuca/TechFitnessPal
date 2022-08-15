@@ -7,6 +7,8 @@ import com.techelevator.model.Meals;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController
 
@@ -22,7 +24,11 @@ public class MealsController {
     @RequestMapping(path = "/meals", method = RequestMethod.POST)
     public Meals addFood(@RequestBody Meals meals) {
        return dao.addMeal(meals);
+    }
 
+    @RequestMapping(path = "/meals", method = RequestMethod.GET)
+    public List<Meals> getMeals() {
+        return dao.getMeals();
     }
 }
 

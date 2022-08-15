@@ -1,16 +1,7 @@
 <template>
   <div>
       <ul class="list">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+<li v-for="m in meals" v-bind:key="m.meal_id">{{ m.mealName }}</li>
         </ul>
 
 
@@ -27,6 +18,24 @@ export default {
 
 }
 </script>
+import mealsService from '../services/MealsService.js'
+
+export default {
+  data() {
+    return {
+      meals: []
+      }
+    },
+    methods: {
+      getMeals() {
+        return this.meal = response.data;
+      }
+    },
+    created() {
+      this.getMeals();
+    }
+  }
+
 
 <style>
 

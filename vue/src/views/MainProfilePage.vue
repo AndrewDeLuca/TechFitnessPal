@@ -38,16 +38,8 @@
           >Add Breakfast</router-link
         >
         <ul class="list">
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
+          <li v-for="food in breakfastFoods" v-bind:key="food.food_id">{{ food.name }}  ||  {{ food.calories }}  @  {{ food.foodConsumed }}</li>
+
         </ul>
         <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
@@ -58,16 +50,8 @@
           >Add Lunch</router-link
         >
         <ul class="list">
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
+          <li v-for="food in lunchFoods" v-bind:key="food.food_id">{{ food.name }}  ||  {{ food.calories }}  @  {{ food.foodConsumed }}</li>
+
         </ul>
         <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
@@ -78,16 +62,7 @@
           >Add Dinner</router-link
         >
                 <ul class="list">
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
+          <li v-for="food in dinnerFoods" v-bind:key="food.food_id">{{ food.name }}  ||  {{ food.calories }}  @  {{ food.foodConsumed }}</li>
         </ul>
         <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
@@ -98,16 +73,7 @@
           >Add Snack</router-link
         >
         <ul class="list">
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
-          <li>No meal added</li>
+          <li v-for="food in snackFoods" v-bind:key="food.food_id">{{ food.name }}  ||  {{ food.calories }}  @  {{ food.foodConsumed }}</li>
         </ul>
         <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button">Quick Meal</router-link>
       </section>
@@ -123,11 +89,41 @@ import foodService from '../services/FoodService.js'
 import BarChart from '../components/BarChart.vue'
 
 export default {
+  data() {
+    return {
+      food: []
+    }
+  },
   component: { BarChart },
   methods: {
-    getFoodByMeal(meal) {
-      foodService.getFoodByMeal(meal).then(response => {
-        return this.$store.state.currentFood.food = response.data;
+    getFood() {
+      foodService.getFood().then(response => {
+        return this.food = response.data;
+      })
+    }
+  },
+  created() {
+    this.getFood();
+  },
+  computed: {
+    breakfastFoods() {
+      return this.food.filter(response => {
+        return response.meal == 'breakfast';
+      })
+    },
+    lunchFoods() {
+      return this.food.filter(response => {
+        return response.meal == 'lunch';
+      })
+    },
+    dinnerFoods() {
+      return this.food.filter(response => {
+        return response.meal == 'dinner';
+      })
+    },
+    snackFoods() {
+      return this.food.filter(response => {
+        return response.meal == 'snack';
       })
     }
   }
