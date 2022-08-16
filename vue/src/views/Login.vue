@@ -1,6 +1,8 @@
 <template>
 
   <div id="login" class="text-center">
+    <router-link :to="{ name: 'login'}" class='tab' tag="button"> Sign In</router-link>
+      <router-link :to="{ name: 'register'}" class='tab' tag="button" >Sign Up</router-link>
     
     <form class="form-signin" @submit.prevent="login">
       <img src="https://prod.wp.cdn.aws.wfu.edu/sites/22/2020/04/iStock-854725402.blog_.jpg" width="500" />

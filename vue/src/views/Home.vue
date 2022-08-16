@@ -1,5 +1,9 @@
 <template>
-  <div class="home">
+<div>
+<router-link :to="{ name: 'login'}" class='tab' tag="button"> Sign In</router-link>
+<router-link :to="{ name: 'register'}" class='tab' tag="button" >Sign Up</router-link>
+
+
     
     <body>
       <h1>Waist Management Home</h1>
@@ -34,7 +38,16 @@
 
    </div>
 
+
+
+
+
+
+
   </div>
+
+
+  
 </template>
 
 <script>

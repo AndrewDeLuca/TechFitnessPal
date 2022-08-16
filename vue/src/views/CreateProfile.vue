@@ -3,7 +3,7 @@
       <form class="form-register" @submit.prevent="create">
         <img src="https://prod.wp.cdn.aws.wfu.edu/sites/22/2020/04/iStock-854725402.blog_.jpg" width="500" />
       <h1 class="h3 mb-3 font-weight-normal">Welcome to Waist Management</h1>
-          <h1 class="h3 mb-3 font-weight-normal" >Create Your Waist Management Profile!</h1>
+          <h1 class="h3 mb-3 font-weight-normal" >Create/Edit Your Waist Management Profile!</h1>
             <div class="alert alert-danger" role="alert"></div>
       
       <label for="img" class="sr-only"></label>

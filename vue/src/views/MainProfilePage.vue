@@ -1,5 +1,7 @@
 <template>
   <div class="grid_container">
+    <router-link :to="{ name: 'login'}" class='tab' tag="button"> Log Out</router-link>
+      
           <div id="title">
       <h1>Waist Management</h1>
       <img src="https://media.istockphoto.com/vectors/logo-barbell-cross-with-kettlebell-plate-shoe-and-muscled-arm-icons-vector-id1159989622?k=20&m=1159989622&s=612x612&w=0&h=83TBa4eikGfEIfwS9MWWHpXRadoBbtUbyd1gExKU9BI=" alt="img" id="logo">
