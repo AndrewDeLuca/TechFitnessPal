@@ -58,6 +58,7 @@
             {{ food.name }} || {{ food.calories }} @ {{ food.foodConsumed }}
           </li>
         </ul>
+        <p>{{this.selectedMealIds}}</p>
         <router-link :to="{ name: 'viewquickmeal' }" class="tab" tag="button"
           >Quick Meal</router-link
         >
