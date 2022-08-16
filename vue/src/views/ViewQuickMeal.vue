@@ -28,8 +28,11 @@ export default {
         mealsService.getMeals().then(response => {
           return this.meals = response.data;
         })
-        
+      //  addQuickMeal(){
+
+      //   }
       }
+      
     },
     created() {
       this.getMeals();
