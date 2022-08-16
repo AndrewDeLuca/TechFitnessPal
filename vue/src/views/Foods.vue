@@ -24,6 +24,7 @@
         id="servingSize"
         class="form-control"
         placeholder="Serving Size"
+        :min="0"
         v-model="food.servingSize"
       />
 
@@ -33,7 +34,9 @@
         id="numberOfServings"
         class="form-control"
         placeholder="Number Of Servings"
+        :min="0"
         v-model="food.numberOfServings"
+        
       />
 
       <select v-model="food.meal" class = "drop">
@@ -46,10 +49,11 @@
 
       <label for="calories" class="sr-only"></label>
       <input
-        type="text"
+        type="number"
         id="calories"
         class="form-control"
         placeholder="Calories"
+        :min="0"
         v-model="food.calories"
       />
 

@@ -54,6 +54,12 @@ public class JdbcFoodsDao implements FoodsDao {
     @Override
     public Foods updateFood(int food_id) {
         Foods updatedFood = new Foods();
+
+        // here is my guess
+//        UPDATE foods
+//        SET name = '?', serving_size = ?, number_of_servings = ?, meal = '?', calories = ?
+//        WHERE food_id = ? AND user_id = ?;
+
         String sql = "INSERT INTO foods (user_id, name, serving_size, number_of_servings, meal, calories, food_consumed) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?) " +
                 "WHERE food_id = ?;";
