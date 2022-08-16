@@ -32,7 +32,7 @@
       <section class="calories">
         <h2>{{ calorieTotal }} current calories/</h2>
         <span> </span>
-        <h2>goal calories</h2>
+        <h2>{{ profile.goalCalories }} goal calories</h2>
 
         <!-- v-for="meal in meals" v-bind:key = "meal.id">
    -->
@@ -115,10 +115,13 @@
 <script>
 import foodService from "../services/FoodService.js";
 import BarChart from "../components/BarChart.vue";
+import profileService from '../services/ProfileService.js'
+
 export default {
   data() {
     return {
       food: [],
+      profile: []
     };
   },
   component: { BarChart },
@@ -128,10 +131,15 @@ export default {
         this.food = response.data;
       });
     },
+    getProfile() {
+      profileService.getProfile(this.$store.state.user.id).then(response => {
+        this.profile = response.data;
+      })
+    }
   },
   created() {
     this.getFood();
-    this.calorieTotal();
+    this.getProfile();
   },
   computed: {
     breakfastFoods() {
