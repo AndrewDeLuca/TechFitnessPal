@@ -1,12 +1,12 @@
 <template>
   <div>
       <ul class="list">
-<li v-for="m in meals" v-bind:key="m.meal_id">{{ m.mealName }}  ||  {{ m.calories }}</li>
+<li v-for="m in meals" v-bind:key="m.meal_id" >{{ m.mealName }}  ||  {{ m.calories }} <input  v-model="selectedMealIDs" v-bind="meals.meal_id" type="checkbox"></li> 
         </ul>
+ 
 
 
-
-<router-link :to="{ name: 'mainprofilepage' }" class="tab" tag="button">Add Meal</router-link>
+<router-link :to="{ name: 'mainprofilepage' }" class="tab" tag="button" >Add Meal</router-link>
   </div>
 
 
@@ -16,11 +16,13 @@
 <script>
 import mealsService from '../services/MealsService.js'
 export default {
+  
   data() {
     return {
       meals: []
       }
     },
+    selectedMealIDs: [],
     methods: {
       getMeals() {
         mealsService.getMeals().then(response => {
