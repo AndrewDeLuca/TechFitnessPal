@@ -110,7 +110,9 @@
           >Quick Meal</router-link
         >
       </section>
-      <section class="graph"></section>
+      <section>
+        <BarChart class="chart"/>
+      </section>
     </section>
   </div>
 </template>
@@ -129,7 +131,7 @@ export default {
       },
     };
   },
-  component: { BarChart },
+  components: { BarChart },
   methods: {
     getFood() {
       foodService.getFood().then((response) => {
@@ -216,7 +218,7 @@ template {
     "header header header header"
     "meals meals '' '' "
     "meals meals '' '' "
-    "graph graph graph graph ";
+    " '' '' '' '' ";
 
   gap: 10px;
   gap: 20px;
@@ -360,9 +362,17 @@ span {
   border: steelblue;
 }
 
-.graph {
-  border-style: solid;
-  height: 450px;
-  grid-area: span;
+/* .chart {
+  height: 100%;
+  width: 100%; */
+
+/* }, */
+
+canvas id {
+width: 2000px;
+height: 2000px;
+
 }
+
+
 </style>

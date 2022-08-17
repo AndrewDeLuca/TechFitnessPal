@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <BarChart />
-      <!-- <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp; -->
+             <!-- <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp; -->
       
       <!-- <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link> -->
     </div>
@@ -11,10 +10,9 @@
 </template>
 
 <script>
-import BarChart from './components/BarChart.vue'
 export default {
   name: 'App',
-  components: { BarChart },
+  components: { },
 }
 </script>
 
