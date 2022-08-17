@@ -39,7 +39,7 @@
       <input type="number" min="0" id="goal_calories" class="form-control" placeholder="Goal Calories" v-model="profile.goalCalories" required>
 
       <label for="date_of_birth" class="sr-only"></label>
-      <input type="date" id="birthday" class="form-control" v-model="profile.dateOfBirth">
+      <input type="date" id="birthday" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" v-model="profile.dateOfBirth">
 
       <label for="display_name" class="sr-only"></label>
       <input type="text" id="display_name" class="form-control" placeholder="Display Name" v-model="profile.displayName">

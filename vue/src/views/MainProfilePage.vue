@@ -15,11 +15,14 @@
 
     <section class="header">
     <img v-bind:src="profile.imgUrl"/>
+    
 
       <section class="button">
+        <h2>{{ profile.displayName }}</h2>
         <router-link :to="{ name: 'profile' }" class="edit" tag="button"
           >Edit Profile</router-link
         >
+      
         <button class="edit">Goals</button>
         <button class="edit">Friends</button>
         <router-link :to="{ name: 'meals' }" class="tab" tag="button"
@@ -96,7 +99,7 @@
 
       <section class="snack">
         <h3>Graph</h3>
-<BarChart class="chart" v-if="calorieTotal && monthlyCalorieTotal" :bar-data="[ calorieTotal, monthlyCalorieTotal ]"/>
+        <BarChart class="chart" v-if="calorieTotal && monthlyCalorieTotal" :bar-data="[ calorieTotal, monthlyCalorieTotal ]"/>
       </section>
       <section>
         
