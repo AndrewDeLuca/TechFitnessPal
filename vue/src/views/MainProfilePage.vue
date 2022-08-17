@@ -111,7 +111,7 @@
         >
       </section>
       <section>
-        <BarChart class="chart"/>
+        <BarChart class="chart" v-if="calorieTotal && monthlyCalorieTotal" :bar-data="[ calorieTotal, monthlyCalorieTotal ]"/>
       </section>
     </section>
   </div>
@@ -127,7 +127,7 @@ export default {
     return {
       food: [],
       profile: {
-        stars: 1
+        stars: 5
       },
     };
   },
@@ -141,6 +141,7 @@ export default {
     getProfile() {
       profileService.getProfile(this.$store.state.user.id).then((response) => {
         this.profile = response.data;
+        this.profile.stars = 5;
       });
     },
   },
@@ -200,11 +201,18 @@ export default {
     },
     calorieTotal() {
       var calories = 0;
-      this.food.forEach((element) => {
+      this.dailyFood.forEach((element) => {
         calories += element.calories;
       });
       return calories;
     },
+    monthlyCalorieTotal() {
+      var calories = 0;
+      this.monthlyFood.forEach(element => {
+        calories += element.calories;
+      })
+      return calories;
+    }
   },
 };
 </script>

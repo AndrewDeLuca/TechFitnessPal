@@ -13,63 +13,76 @@
 </template>
 
 <script>
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-import { Bar } from 'vue-chartjs/legacy'
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+} from "chart.js";
+import { Bar } from "vue-chartjs/legacy";
 
-
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale
+);
 
 export default {
-
-  name: 'BarChart',
+  name: "BarChart",
   components: { Bar },
   props: {
     chartId: {
       type: String,
-      default: 'bar-chart'
+      default: "bar-chart",
     },
     datasetIdKey: {
       type: String,
-      default: 'label'
+      default: "label",
     },
     width: {
       type: Number,
-      default: 400
+      default: 400,
     },
     height: {
       type: Number,
-      default: 400
+      default: 400,
     },
     cssClasses: {
-      default: '',
-      type: String
+      default: "",
+      type: String,
     },
     styles: {
       type: Object,
-      default: () => {}
+      default: () => {},
     },
-    plugins: {
-      type: Object,
-      default: () => {}
-    }
+    barData: {
+      type: Array,
+    },
   },
   data() {
     return {
       chartData: {
-        labels: [ '8/16-8/24', '8/24-8/31' ],
-        datasets: [ { data: [1600, 1200] } ]
+        labels: ["Daily", "Monthly"],
+        datasets: [{ data: this.barData, label: "Calories", backgroundColor: "goldenrod" }],
       },
       chartOptions: {
-        responsive: true
-      }
-    }
-  }
-}
-
-
-
+        responsive: true,
+      },
+      plugins: {
+        title: {
+          text: "Calories",
+        },
+      },
+    };
+  },
+};
 </script>
 
 <style>
-
 </style>
