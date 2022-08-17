@@ -10,17 +10,18 @@
 <section class=profileImage>      
 <label for="Profile1" class="sr-only"></label>
 <img class=image src="https://www.pngitem.com/pimgs/m/145-1454911_healthy-food-view-fruits-clipart-free-nutrition-and.png">
-<input type="radio" value="1" class="form-control" v-model="profile.img_url"> 
+<input type="radio" value=https://www.pngitem.com/pimgs/m/145-1454911_healthy-food-view-fruits-clipart-free-nutrition-and.png class="form-control" v-model="profile.imgUrl"> 
    
 <label for="Profile2" class="sr-only"></label>
 <img class=image src="https://www.pngitem.com/pimgs/m/334-3347596_view-health-litjpg-clipart-free-nutrition-and-healthy.png">
-<input type="radio" value="2" class="form-control" v-model="profile.img_url"> 
+<input type="radio" value=https://www.pngitem.com/pimgs/m/334-3347596_view-health-litjpg-clipart-free-nutrition-and-healthy.png class="form-control" v-model="profile.imgUrl"> 
 
 <label for="Profile3" class="sr-only"></label>
 <img class=image src="https://www.pngitem.com/pimgs/m/441-4413519_carrot-hd-png-download.png">
-<input type="radio" value="3" class="form-control" v-model="profile.img_url"> 
+<input type="radio" value=https://www.pngitem.com/pimgs/m/441-4413519_carrot-hd-png-download.png class="form-control" v-model="profile.imgUrl">
 <h2>Please Choose Your Profile Image</h2>
 </section>
+
       
       <label for="age" class="sr-only"></label>
       <input type="number" min="0" id="age" class="form-control" placeholder="Age" v-model="profile.age" required autofocus>
