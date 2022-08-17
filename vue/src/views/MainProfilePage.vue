@@ -94,7 +94,7 @@
         >
       </section>
 
-      <section class="snacks">
+      <section class="snack">
         <h3>Graph</h3>
 <BarChart class="chart" v-if="calorieTotal && monthlyCalorieTotal" :bar-data="[ calorieTotal, monthlyCalorieTotal ]"/>
       </section>
@@ -211,12 +211,12 @@ export default {
 <style scoped>
 template {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "header header header header"
-    "meals meals '' '' "
-    "meals meals '' '' "
-    " '' '' '' '' ";
+    "header header"
+    "meals meals"
+    "meals graph";
+    
 
   gap: 10px;
   gap: 20px;
@@ -263,10 +263,10 @@ h1 {
 
 .meals {
   display: grid;
-  grid-template-columns: 500px 500px;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "breakfast lunch"
-    "dinner snacks";
+    "dinner graph";
 
   gap: 10px;
   gap: 20px;
@@ -312,7 +312,7 @@ h3 {
 
 .meals {
   grid-area: meals;
-  margin-left: 35px;
+
 }
 .breakfast {
   border-style: solid;
@@ -326,7 +326,7 @@ h3 {
   border-style: solid;
   height: 700px;
 }
-.snacks {
+.snack {
   border-style: solid;
   height: 700px;
 }
@@ -341,7 +341,7 @@ img {
 }
 
 .tab {
-  margin-left: 110px;
+  margin-left: 325px;
 }
 .list {
   margin-top: 100px;
@@ -360,17 +360,6 @@ span {
   border: steelblue;
 }
 
-/* .chart {
-  height: 100%;
-  width: 100%; */
-
-/* }, */
-
-canvas id {
-width: 2000px;
-height: 2000px;
-
-}
 
 
 </style>
