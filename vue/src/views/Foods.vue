@@ -44,7 +44,6 @@
         <option>breakfast</option>
         <option>lunch</option>
         <option>dinner</option>
-        <option>snack</option>
       </select>
 
       <label for="calories" class="sr-only"></label>
