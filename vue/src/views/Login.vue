@@ -1,7 +1,7 @@
 <template>
 
   <div id="login" class="text-center">
-    <router-link :to="{ name: 'login'}" class='tab' tag="button"> Sign In</router-link>
+    
       <router-link :to="{ name: 'register'}" class='tab' tag="button" >Sign Up</router-link>
     
     <form class="form-signin" @submit.prevent="login">

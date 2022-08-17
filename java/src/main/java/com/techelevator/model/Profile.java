@@ -15,8 +15,7 @@ public class Profile {
     private int desiredWeight;
     @NotEmpty
     private int age;
-    @NotEmpty
-    private int height;
+    private String height;
 
     private String displayName;
     private Date dateOfBirth;
@@ -89,11 +88,11 @@ public class Profile {
         this.age = age;
     }
 
-    public int getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
