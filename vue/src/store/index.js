@@ -30,7 +30,7 @@ export default new Vuex.Store({
         numberOfServings: '',
         meal: '',
         calories: '',
-        userId: currentUser.id,
+        userId: currentUser ? currentUser.id : 0,
         foodConsumed: date
       }
     }
