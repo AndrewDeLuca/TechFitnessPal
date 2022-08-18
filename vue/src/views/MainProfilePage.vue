@@ -25,9 +25,7 @@
       
         
         
-        <router-link :to="{ name: 'meals' }" class="tab" tag="button"
-          >Create Meal</router-link
-        >
+        <router-link :to="{ name: 'meals' }" class="meal" tag="button">Create Meal</router-link>
       </section>
       <section class="calories">
         <h2>{{ calorieTotal }} current calories/</h2>
@@ -346,7 +344,9 @@ img {
 }
 
 .tab {
-  margin-left: 325px;
+    margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 .list {
   margin-top: 100px;
@@ -369,6 +369,9 @@ span {
 margin-left: 800px;
 width: 200px;
 
+}
+.meal {
+  margin-top: 180%;
 }
 
 
