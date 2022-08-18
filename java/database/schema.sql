@@ -19,7 +19,7 @@ CREATE TABLE profile (
 	height varchar,
 	age int,
 	date_of_birth DATE,
-	img_url varchar(100),
+	img_url varchar(500),
 	display_name varchar(50),
 
 	CONSTRAINT FK_profile_user_id FOREIGN KEY (user_id) REFERENCES users (user_id)

@@ -57,6 +57,18 @@ export default {
 </script>
 
 <style scoped>
+
+h1{
+margin-top: 40px;
+  font-size: 3.5rem;
+}
+
+h2{
+
+font-size: 3rem;
+
+}
+
 img {
 
   width: 250px;
@@ -66,6 +78,7 @@ img {
 }
 h3{
   margin-bottom: 0%;
+  font-size: 3rem;
 }
 h4 {
 

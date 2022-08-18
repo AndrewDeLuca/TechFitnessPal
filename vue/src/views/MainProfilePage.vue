@@ -1,6 +1,6 @@
 <template>
   <div class="grid_container">
-    <router-link :to="{ name: 'login' }" class="tab" tag="button">
+    <router-link :to="{ name: 'login' }" class="tabs" tag="button">
       Log Out</router-link
     >
 
@@ -18,13 +18,13 @@
     
 
       <section class="button">
-        <h2>{{ profile.displayName }}</h2>
+        <h2>{{ profile.displayName }} </h2>
         <router-link :to="{ name: 'profile' }" class="edit" tag="button"
           >Edit Profile</router-link
         >
       
-        <button class="edit">Goals</button>
-        <button class="edit">Friends</button>
+        
+        
         <router-link :to="{ name: 'meals' }" class="tab" tag="button"
           >Create Meal</router-link
         >
@@ -293,10 +293,12 @@ button {
 
 h1 {
   margin-top: 50px;
+  margin-left: 450px;
   font-size: 300%;
   grid-area: h1;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: goldenrod;
+  text-align: center;
 }
 
 h2 {
@@ -361,6 +363,12 @@ img {
 span {
   border-style: solid;
   border: steelblue;
+}
+
+.tabs {
+margin-left: 800px;
+width: 200px;
+
 }
 
 
