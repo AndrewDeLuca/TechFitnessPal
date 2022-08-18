@@ -41,7 +41,7 @@
         required
       />
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      <button class="tab btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
     </form>
@@ -114,4 +114,17 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.tab {
+  margin: auto;
+  width: 21%;
+  padding: 10px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}</style>
