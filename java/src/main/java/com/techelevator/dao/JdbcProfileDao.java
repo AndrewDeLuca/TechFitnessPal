@@ -51,6 +51,15 @@ public class JdbcProfileDao implements ProfileDao {
         return null;
     }
 
+    @Override
+    public void updateProfile(int userId, Profile profile) {
+        String sql = "UPDATE profile " +
+                "SET goal_calories = ?, current_weight = ?, desired_weight = ?, height = ?, date_of_birth = ?, img_url = ?, display_name = ? " +
+                "WHERE user_id = ?;";
+
+        jdbcTemplate.update(sql, profile.getGoalCalories(), profile.getCurrentWeight(), profile.getDesiredWeight(), profile.getHeight(), profile.getDateOfBirth(), profile.getImgUrl(), profile.getDisplayName(), userId);
+    }
+
     private Profile getProfileById(int profileId) {
         String sql = "SELECT * FROM profile WHERE profile_id = ?;";
 
@@ -69,7 +78,7 @@ public class JdbcProfileDao implements ProfileDao {
         profile.setCurrentWeight(rowSet.getInt("current_weight"));
         profile.setDesiredWeight(rowSet.getInt("desired_weight"));
         profile.setAge(rowSet.getInt("age"));
-        profile.setHeight(rowSet.getString("height"));
+        profile.setHeight(rowSet.getInt("height"));
         profile.setDateOfBirth(rowSet.getDate("date_of_birth"));
         profile.setImgUrl(rowSet.getString("img_url"));
         profile.setDisplayName(rowSet.getString("display_name"));

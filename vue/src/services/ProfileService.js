@@ -7,5 +7,8 @@ export default {
     },
     getProfile(userId) {
         return axios.get(`/profile/${userId}`);
+    },
+    updateProfile(profile) {
+        return axios.put(`/profile/${profile.userId}`, profile);
     }
 }

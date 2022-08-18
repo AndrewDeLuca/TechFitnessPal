@@ -10,6 +10,7 @@ import MainProfilePage from '../views/MainProfilePage'
 import Foods from '../views/Foods.vue'
 import Meals from '../views/Meals.vue'
 import ViewQuickMeal from '../views/ViewQuickMeal.vue'
+import UpdateProfile from '../views/UpdateProfile.vue'
 //import { component } from 'vue/types/umd'
 
 Vue.use(Router)
@@ -88,9 +89,11 @@ const router = new Router({
       path: "/viewquickmeal",
       name: "viewquickmeal",
       component: ViewQuickMeal 
-
-
-
+    },
+    {
+      path: "/editprofile/:userId",
+      name: "editprofile",
+      component: UpdateProfile
     }
 
 

@@ -52,10 +52,7 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
-    SET_PROFILE(state, profile) {
-      state.profile = profile;
-      localStorage.setItem('profile', JSON.stringify(profile));
-    },
+
     SET_ACTIVE_MEAL(state, data) {
       state.active_meal = data;
     }

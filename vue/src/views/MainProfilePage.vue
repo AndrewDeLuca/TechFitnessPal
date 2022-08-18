@@ -19,7 +19,7 @@
 
       <section class="button">
         <h2>{{ profile.displayName }} </h2>
-        <router-link :to="{ name: 'profile' }" class="edit" tag="button"
+        <router-link :to="{ name: 'editprofile', params: { userId: this.$store.state.user.id } }" class="edit" tag="button"
           >Edit Profile</router-link
         >
       

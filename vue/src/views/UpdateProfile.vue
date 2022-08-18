@@ -1,6 +1,6 @@
 <template>
   <div id="register" class="text-center">
-      <form class="form-register" @submit.prevent="create">
+      <form class="form-register" @submit.prevent="update">
         <img src="https://prod.wp.cdn.aws.wfu.edu/sites/22/2020/04/iStock-854725402.blog_.jpg" width="500" />
       <h1 class="h3 mb-3 font-weight-normal">Welcome to Waist Management</h1>
           <h1 class="h3 mb-3 font-weight-normal" >Create/Edit Your Waist Management Profile!</h1>
@@ -44,7 +44,7 @@
       <label for="display_name" class="sr-only"></label>
       <input type="text" id="display_name" class="form-control" placeholder="Display Name" v-model="profile.displayName">
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Create Profile</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Update Profile</button>
       </form>
   </div>
 </template>

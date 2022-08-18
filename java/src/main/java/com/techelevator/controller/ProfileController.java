@@ -27,4 +27,10 @@ public class ProfileController {
     public Profile get(@PathVariable int userId) {
         return profileDao.get(userId);
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(path = "/profile/{userId}", method = RequestMethod.PUT)
+    public void updateProfile(@PathVariable int userId, @RequestBody Profile profile) {
+        profileDao.updateProfile(userId, profile);
+    }
 }

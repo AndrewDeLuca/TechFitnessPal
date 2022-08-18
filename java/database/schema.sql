@@ -16,7 +16,7 @@ CREATE TABLE profile (
 	goal_calories int,
 	current_weight int NOT NULL,
 	desired_weight int NOT NULL,
-	height varchar,
+	height int,
 	age int,
 	date_of_birth DATE,
 	img_url varchar(500),
