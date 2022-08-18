@@ -38,7 +38,7 @@
         required
       />
       
-      <button type="submit">Sign In</button>
+      <button type="submit" class="tab">Sign In</button>
      
     </form>
       </div>
@@ -121,6 +121,19 @@ padding: 25px;
 width: 540px;
 height: 300px;
 
+}
+.tab {
+  margin: auto;
+  width: 21%;
+  padding: 10px;
+  background-color: #4CAF50; /* Green */
+  border: 1%, solid, white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 </style>

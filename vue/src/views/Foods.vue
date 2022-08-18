@@ -1,13 +1,5 @@
 <template>
   <div>
-    <input
-      type="text"
-      id="foodSearch"
-      placeholder="Enter Search Term"
-      @submit.prevent="search"
-    />
-    <button type="submit">Search</button>
-
     <form class="form-register" @submit.prevent="addFood">
       <label for="name" class="sr-only"></label>
       <input

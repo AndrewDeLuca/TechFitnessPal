@@ -64,12 +64,15 @@ export default {
     barData: {
       type: Array,
     },
+    goalData: {
+      type: Array,
+    }
   },
   data() {
     return {
       chartData: {
         labels: ["Daily", "Monthly"],
-        datasets: [{ data: this.barData, label: "Calories", backgroundColor: "goldenrod" }],
+        datasets: [{ data: this.barData, label: "Calories", backgroundColor: "goldenrod" }, { data: this.goalData, label: "Goal Calories", backgroundColor: "blue"}],
       },
       chartOptions: {
         responsive: true,
